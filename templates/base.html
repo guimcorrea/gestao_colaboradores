@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Gestão de Colaboradores{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Gestão de Colaboradores</h1>
+        <nav>
+            <a href="{% url 'home' %}">Início</a> |
+            <a href="{% url 'colaboradores' %}">Colaboradores</a> |
+            <a href="{% url 'documentos' %}">Documentos</a> |
+            <a href="{% url 'epis' %}">EPIs</a> |
+            <a href="{% url 'exames_certificacoes' %}">Exames e Certificações</a> |
+            <a href="{% url 'relatorios' %}">Relatórios</a> |
+            <a href="{% url 'treinamentos' %}">Treinamentos</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ year }} Gestão de Colaboradores</p>
+    </footer>
+</body>
+</html>
 
