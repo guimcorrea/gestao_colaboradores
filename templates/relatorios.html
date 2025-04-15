@@ -1,9 +1,43 @@
-{% extends 'base.html' %}
-
-{% block title %}Relatórios{% endblock %}
-
-{% block content %}
-    <h2>Relatórios</h2>
-    <p>Gere e consulte relatórios completos do sistema.</p>
-{% endblock %}
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - Gestão de Colaboradores</title>
+    <link rel="stylesheet" href="static/css/relatorios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Geração de Relatórios</h1>
+        <p>Selecione um relatório abaixo para gerar ou visualizar:</p>
+        
+        <div class="grid-buttons">
+            <a href="#" class="button">
+                <i class="fas fa-users"></i>
+                <span>Relatório de Colaboradores</span>
+            </a>
+            <a href="#" class="button">
+                <i class="fas fa-stethoscope"></i>
+                <span>Relatório de Exames e Certificações</span>
+            </a>
+            <a href="#" class="button">
+                <i class="fas fa-hard-hat"></i>
+                <span>Relatório de EPIs</span>
+            </a>
+            <a href="#" class="button">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Relatório de Treinamentos</span>
+            </a>
+            <a href="#" class="button">
+                <i class="fas fa-chart-line"></i>
+                <span>Relatório de Custos</span>
+            </a>
+            <a href="#" class="button">
+                <i class="fas fa-cogs"></i>
+                <span>Relatório de Conformidade Legal</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
