@@ -1,9 +1,90 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Treinamentos - Construção Civil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
 
-{% block title %}Gestão de Treinamentos{% endblock %}
+<div class="container mt-5">
+    <h2 class="mb-4">Cadastro de Treinamentos</h2>
 
-{% block content %}
-    <h2>Treinamentos</h2>
-    <p>Acompanhe os treinamentos realizados e pendentes dos colaboradores.</p>
-{% endblock %}
+    <!-- Formulário de Cadastro de Treinamento -->
+    <form class="card p-4 mb-5">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label class="form-label">Nome do Treinamento</label>
+                <input type="text" class="form-control" placeholder="Ex: NR-18 - Segurança na Construção">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Colaborador Participante</label>
+                <input type="text" class="form-control" placeholder="Digite o nome do colaborador">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Data de Início</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Data de Conclusão</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Status</label>
+                <select class="form-select">
+                    <option>Concluído</option>
+                    <option>Pendente</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label class="form-label">Observações</label>
+                <textarea class="form-control" rows="2" placeholder="Detalhes adicionais sobre o treinamento..."></textarea>
+            </div>
+        </div>
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Cadastrar Treinamento</button>
+        </div>
+    </form>
 
+    <!-- Lista de Treinamentos -->
+    <h4>Lista de Treinamentos</h4>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Treinamento</th>
+                <th>Colaborador</th>
+                <th>Início</th>
+                <th>Conclusão</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>NR-35 - Trabalho em Altura</td>
+                <td>Pedro Santos</td>
+                <td>2025-02-10</td>
+                <td>2025-02-12</td>
+                <td><span class="badge bg-success">Concluído</span></td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Editar</button>
+                    <button class="btn btn-danger btn-sm">Excluir</button>
+                </td>
+            </tr>
+            <tr>
+                <td>NR-18 - Segurança em Obras</td>
+                <td>Lucas Ferreira</td>
+                <td>2025-04-01</td>
+                <td>--</td>
+                <td><span class="badge bg-warning text-dark">Pendente</span></td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Editar</button>
+                    <button class="btn btn-danger btn-sm">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
