@@ -1,7 +1,40 @@
-{% extends 'base.html' %}
-{% block title %}Página Inicial{% endblock %}
-{% block content %}
-    <h2>Bem-vindo à Gestão de Colaboradores</h2>
-    <p>Escolha uma das opções no menu acima para começar.</p>
-{% endblock %}
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Gestão de Colaboradores</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Gestão de Colaboradores</h1>
+        <div class="grid-buttons">
+            <a href="colaboradores.html" class="button">
+                <i class="fas fa-users"></i>
+                <span>Colaboradores</span>
+            </a>
+            <a href="documentos.html" class="button">
+                <i class="fas fa-file-alt"></i>
+                <span>Documentos</span>
+            </a>
+            <a href="epis.html" class="button">
+                <i class="fas fa-hard-hat"></i>
+                <span>EPIs</span>
+            </a>
+            <a href="treinamentos.html" class="button">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <span>Treinamentos</span>
+            </a>
+            <a href="exames.html" class="button">
+                <i class="fas fa-stethoscope"></i>
+                <span>Exames e Certificações</span>
+            </a>
+            <a href="relatorios.html" class="button">
+                <i class="fas fa-chart-line"></i>
+                <span>Relatórios</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
