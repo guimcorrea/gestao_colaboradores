@@ -2,126 +2,105 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Documentos</title>
-    <link rel="stylesheet" href="ctatic/css/style.css">
+    <title>Gestão de Documentos - Construção Civil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="form-container">
-        <h2>Cadastro de Documentos Trabalhistas</h2>
-        <form action="/cadastrar-documentos" method="post" enctype="multipart/form-data">
+<body class="bg-light">
 
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="colaborador">Nome do Colaborador</label>
-                    <input type="text" id="colaborador" name="colaborador" required>
-                </div>
+<div class="container mt-5">
+    <h2 class="mb-4">Cadastro de Documentos</h2>
 
-                <div class="form-group">
-                    <label for="contrato">Contrato de Trabalho</label>
-                    <label class="file-label">
-                        Escolher arquivo
-                        <input type="file" id="contrato" name="contrato">
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label for="ficha">Ficha de Registro</label>
-                    <label class="file-label">
-                        Escolher arquivo
-                        <input type="file" id="ficha" name="ficha">
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label for="aso">ASO (Atestado de Saúde Ocupacional)</label>
-                    <label class="file-label">
-                        Escolher arquivo
-                        <input type="file" id="aso" name="aso">
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label for="aso_data">Data do ASO</label>
-                    <input type="date" id="aso_data" name="aso_data">
-                </div>
-
-                <div class="form-group">
-                    <label for="ppra">PPRA / PGR</label>
-                    <label class="file-label">
-                        Escolher arquivo
-                        <input type="file" id="ppra" name="ppra">
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label for="pcmso">PCMSO</label>
-                    <label class="file-label">
-                        Escolher arquivo
-                        <input type="file" id="pcmso" name="pcmso">
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label for="ppp">PPP</label>
-                    <label class="file-label">
-                        Escolher arquivo
-                        <input type="file" id="ppp" name="ppp">
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label for="cipa">Documento CIPA</label>
-                    <label class="file-label">
-                        Escolher arquivo
-                        <input type="file" id="cipa" name="cipa">
-                    </label>
-                </div>
+    <!-- Formulário de Cadastro -->
+    <form class="card p-4 mb-5">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label class="form-label">Nome do Documento</label>
+                <input type="text" class="form-control" placeholder="Ex: Exame Médico, Certificado NR-35">
             </div>
-
-            <h2>Documentos de Fornecedores e Terceirizados</h2>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="fornecedor">Nome da Empresa Fornecedora</label>
-                    <input type="text" id="fornecedor" name="fornecedor" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="contrato_servico">Contrato de Prestação de Serviço</label>
-                    <label class="file-label">
-                        Escolher arquivo
-                        <input type="file" id="contrato_servico" name="contrato_servico">
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label for="certidoes">Certidões Negativas (INSS, FGTS, etc.)</label>
-                    <label class="file-label">
-                        Escolher arquivos
-                        <input type="file" id="certidoes" name="certidoes" multiple>
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label for="documentacao_terceirizados">Documentação dos Trabalhadores</label>
-                    <label class="file-label">
-                        Escolher arquivos
-                        <input type="file" id="documentacao_terceirizados" name="documentacao_terceirizados" multiple>
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label for="arts_terceirizados">ARTs dos Terceirizados</label>
-                    <label class="file-label">
-                        Escolher arquivos
-                        <input type="file" id="arts_terceirizados" name="arts_terceirizados" multiple>
-                    </label>
-                </div>
+            <div class="col-md-6">
+                <label class="form-label">Colaborador Relacionado</label>
+                <input type="text" class="form-control" placeholder="Digite o nome do colaborador">
             </div>
+            <div class="col-md-4">
+                <label class="form-label">Data de Emissão</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Data de Vencimento</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Tipo do Documento</label>
+                <select class="form-select">
+                    <option>Certificado</option>
+                    <option>Exame Médico</option>
+                    <option>Contrato</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label class="form-label">Observações</label>
+                <textarea class="form-control" rows="2" placeholder="Informações adicionais sobre o documento..."></textarea>
+            </div>
+        </div>
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Cadastrar Documento</button>
+        </div>
+    </form>
 
-            <div class="form-group full-width">
-                <button type="submit">Salvar Documentos</button>
+    <!-- Lista de Documentos -->
+    <h4>Lista de Documentos</h4>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Documento</th>
+                <th>Colaborador</th>
+                <th>Emissão</th>
+                <th>Vencimento</th>
+                <th>Tipo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Certificado NR-35</td>
+                <td>João da Silva</td>
+                <td>2025-01-15</td>
+                <td>2026-01-15</td>
+                <td>Certificado</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Editar</button>
+                    <button class="btn btn-danger btn-sm">Excluir</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Exame Médico Admissional</td>
+                <td>Maria Oliveira</td>
+                <td>2025-03-10</td>
+                <td>2026-03-10</td>
+                <td>Exame Médico</td>
+                <td>
+                    <button class="btn btn-warning btn-sm">Editar</button>
+                    <button class="btn btn-danger btn-sm">Excluir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Filtro de Vencimento -->
+    <div class="mt-5">
+        <h4>Vencimento de Documentos</h4>
+        <form class="row g-3 align-items-end">
+            <div class="col-md-4">
+                <label class="form-label">Buscar documentos que vencem até:</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-outline-primary">Filtrar</button>
             </div>
         </form>
     </div>
+</div>
+
 </body>
 </html>
