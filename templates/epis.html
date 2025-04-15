@@ -1,7 +1,61 @@
-{% extends 'base.html' %}
-{% block title %}Gestão de EPIs{% endblock %}
-{% block content %}
-    <h2>EPIs</h2>
-    <p>Registre e controle os Equipamentos de Proteção Individual fornecidos aos colaboradores.</p>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de EPIs</title>
+    <link rel="stylesheet" href="static/css/epis.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Cadastro de Equipamentos de Proteção (EPIs)</h2>
+        <form action="/cadastrar-epi" method="post" enctype="multipart/form-data">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="colaborador">Nome do Colaborador</label>
+                    <input type="text" id="colaborador" name="colaborador" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nome_epi">Nome do EPI</label>
+                    <input type="text" id="nome_epi" name="nome_epi" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantidade">Quantidade</label>
+                    <input type="number" id="quantidade" name="quantidade" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="data_entrega">Data da Entrega</label>
+                    <input type="date" id="data_entrega" name="data_entrega" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="validade">Validade do EPI</label>
+                    <input type="date" id="validade" name="validade">
+                </div>
+
+                <div class="form-group">
+                    <label for="responsavel">Responsável pela Entrega</label>
+                    <input type="text" id="responsavel" name="responsavel" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="comprovante">Comprovante de Entrega</label>
+                    <label class="file-label">
+                        Escolher arquivo
+                        <input type="file" id="comprovante" name="comprovante">
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <button type="submit">Salvar EPI</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
 
