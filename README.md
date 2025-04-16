@@ -1,7 +1,7 @@
-# Projeto integrador 1 SIGC
+# Projeto integrador 1
 
 **Software de integração Geral para Construtoras.
-SIGC** [link](web site).
+gestão de colaboradores** [link](web site).
 
 * 📚  *Projeto Integrador 1.*
 
